@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Programming - Core Concepts</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      color: #222;
+      background-color: #f7f4ef;
+      overflow-x: hidden;
+    }
+
+    /* --- NAVBAR --- */
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.6em;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffebcd;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(60, 30, 10, 0.7)),
+        url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero h3 {
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #f5deb3;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 10px auto 30px;
+      font-size: 1.1em;
+      color: #eee;
+    }
+
+    .hero a {
+      text-decoration: none;
+      background: #ffb347;
+      color: #222;
+      font-weight: 600;
+      padding: 14px 30px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .hero a:hover {
+      background: #ffd580;
+      transform: scale(1.05);
+    }
+
+    /* --- TOPICS SECTION --- */
+    .topics {
+      background: #fffaf3;
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    .topics h2 {
+      font-size: 2.2em;
+      color: #4b2e05;
+      margin-bottom: 40px;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Make each topic card clickable like a button */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  transition: 0.4s ease;
+  color: #5b3a09;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeIn 1s forwards;
+}
+
+.card:nth-child(odd) { animation-delay: 0.2s; }
+.card:nth-child(even) { animation-delay: 0.4s; }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: #ffb347;
+  color: #fff;
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #4b2e05;
+      color: #fffaf3;
+      text-align: center;
+      padding: 20px;
+      margin-top: 80px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5em; }
+      .topics { padding: 80px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">JAVA PROJECT</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Master Java Programming</h1>
+    <h3>By PRACHI RAUTELA - 4126/25</h3>
+    <p>Explore the foundations of Object-Oriented Programming, multithreading, GUI, and more. Learn, create, and innovate with Java — the language that powers the digital world.</p>
+    <a href="#topics">Explore Topics</a>
+  </section>
+
+  <!-- TOPICS -->
+<section class="topics" id="topics">
+  <h2>Core Java Programming Topics</h2>
+  <div class="topic-grid">
+    <a href="BasicProgrammingConstruct.html" class="card"><h3>Basic Programming Constructs</h3></a>
+    <a href="SingleDimensionalArray.html" class="card"><h3>Single Dimensional Arrays</h3></a>
+    <a href="MultiDimensionalArray.html" class="card"><h3>MultiDimensionalArray Dimensional Arrays</h3></a>
+    <a href="Inheritance.html" class="card"><h3>Inheritance</h3></a>
+    <a href="Interfaces.html" class="card"><h3>Interfaces</h3></a>
+    <a href="Multithreading.html" class="card"><h3>Multithreading</h3></a>
+    <a href="Packages.html" class="card"><h3>Packages</h3></a>
+    <a href="ExceptionHandling.html" class="card"><h3>Exception Handling</h3></a>
+    <a href="dataconversion.html" class="card"><h3>Data Conversion</h3></a>
+    <a href="delegationEventModel.html" class="card"><h3>Delegation Event Model</h3></a>
+    <a href="GUI_AWT.html" class="card"><h3>GUI (AWT & Swing)</h3></a>
+    <a href="JavaDatabaseConnectivity.html" class="card"><h3>JDBC Connectivity</h3></a>
+  <a href="InputOutput.html" class="card"><h3>Input Output</h3></a>
+  <a href="JavaFunctions.html" class="card"><h3>Functions </h3></a>
+    <a href="ObjectOrientedProgramming.html" class="card"><h3>Object Oriented Programming </h3></a>
+    <a href="Strings.html" class="card"><h3> Strings </h3></a>
+    
+    </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Java Project | Guided by Mr. Chetan Gupta
+  </footer>
+
+</body>
+</html>

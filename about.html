@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - JavaPro</title>
+<style>
+/* 🌼 Base Reset */
+*{
+  margin:0; padding:0; box-sizing:border-box;
+  font-family:sans-serif;
+}
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#d9e4f5,#fef9d7);
+  display:flex;
+  flex-direction:column;
+  color:#333;
+  overflow-x:hidden;
+}
+
+/* 🌤 Navbar */
+nav{
+  width:100%;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  box-shadow:0 2px 15px rgba(0,0,0,0.1);
+}
+nav .logo{
+  font-size:1.8em;
+  font-weight:700;
+  color:#34568B;
+  letter-spacing:1px;
+}
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+nav ul li a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  transition:0.3s;
+}
+nav ul li a:hover{
+  color:#34568B;
+  text-shadow:0 0 6px rgba(52,86,139,0.4);
+}
+
+/* 🌈 Main Section */
+.container{
+  max-width:900px;
+  margin:70px auto;
+  background:rgba(255,255,255,0.9);
+  border-radius:20px;
+  padding:40px 50px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+  text-align:center;
+  animation:fadeIn 1.5s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* 🧑‍💻 Title & Subtitle */
+h1{
+  font-size:2.4em;
+  color:#34568B;
+  margin-bottom:10px;
+  letter-spacing:1px;
+}
+.typing{
+  font-size:1.1em;
+  color:#555;
+  margin-bottom:35px;
+  font-weight:500;
+  min-height:26px;
+}
+
+/* 🪪 Info Card */
+.info-card{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  margin-bottom:40px;
+}
+.card{
+  background:linear-gradient(135deg,#e0f7fa,#e3f2fd);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  transition:transform 0.3s ease;
+}
+.card:hover{
+  transform:translateY(-6px);
+}
+.card p{
+  font-size:1.05em;
+  color:#333;
+}
+.highlight{
+  color:#949888;
+  font-weight:600;
+}
+
+/* ☕ Java Facts */
+h2{
+  margin:25px 0 10px;
+  color:#686c5f;
+  font-size:1.8em;
+}
+ul{
+  text-align:left;
+  max-width:700px;
+  margin:0 auto;
+  padding-left:20px;
+  list-style-type:"☕ ";
+  line-height:1.8;
+  font-size:1.05em;
+  color:#444;
+}
+ul li strong{color:#9ca383;}
+
+/* 👣 Footer */
+footer{
+  text-align:center;
+  padding:25px 0;
+  font-size:0.95em;
+  color:#555;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(8px);
+  border-top:1px solid rgba(0,0,0,0.1);
+  margin-top:50px;
+}
+footer span{
+  color:#34568B;
+  font-weight:600;
+}
+
+/* 📱 Responsive */
+@media(max-width:768px){
+  nav{flex-direction:column;gap:10px;}
+  .container{padding:30px 25px;}
+  .info-card{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- 🌟 Navbar -->
+<nav>
+  <div class="logo">JavaPro</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</nav>
+
+<!-- 🌸 About Section -->
+<div class="container">
+  <h1>About Developer</h1>
+  <div class="typing" id="typingText"> Write. Compile. Conquer Java. </div>
+
+  <div class="info-card">
+    <div class="card"><p><span class="highlight">Name:</span> Prachi Rautela</p></div>
+    <div class="card"><p><span class="highlight">Class:</span> BCA 5th Semester</p></div>
+    <div class="card"><p><span class="highlight">Roll No:</span> 4126/25</p></div>
+    <div class="card"><p><span class="highlight">Mentor:</span> Mr. Chetan Gupta</p></div>
+  </div>
+
+  <h2>About Java</h2>
+  <ul>
+   <li>Java is a powerful, object-oriented language designed for reliability and performance.</li>
+  <li>It enables developers to build applications that work across different platforms effortlessly.</li>
+  <li>From Android apps to enterprise systems, Java powers millions of solutions worldwide.</li>
+  <li>Its rich library support and security features make coding efficient and safe.</li>
+  <li>Modern frameworks like Spring Boot and JavaFX extend Java’s reach into web and GUI development.</li>
+
+  </ul>
+</div>
+
+<!-- 👣 Footer -->
+<footer>
+  © 2025 <span>JavaPro</span> | Designed by <span>Prachi Rautela</span> | Mentor: <span>Mr. Chetan Gupta</span>
+</footer>
+
+<script>
+// ✨ Typing Effect
+const typingText=document.getElementById("typingText");
+const text="Code Smart • Think Java • Learn, Build, and Innovate!";
+let i=0;
+function typing(){
+  if(i<text.length){
+    typingText.textContent+=text.charAt(i);
+    i++;
+    setTimeout(typing,60);
+  }
+}
+window.onload=typing;
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
